@@ -4,9 +4,9 @@ import "fmt"
 
 func main() {
 	var (
-		a  int
-		b  int
-		op string
+		num1  int
+		num2  int
+		operator string
 	)
 	_, err := fmt.Scan(&a)
 	if err != nil {
