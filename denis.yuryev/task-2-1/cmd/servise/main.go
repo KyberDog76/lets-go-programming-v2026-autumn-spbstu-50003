@@ -19,7 +19,7 @@ func main() {
 		return
 	}
 
-	for range departments { {
+	for range departments {
 		if _, err := fmt.Scan(&staff); err != nil {
 			return
 		}
@@ -27,7 +27,7 @@ func main() {
 		minTemp := 15
 		maxTemp := 30
 
-		for range staff { {
+		for range staff {
 			if _, err := fmt.Scan(&operation, &degree); err != nil {
 				fmt.Fprintln(os.Stderr, "Invalid input for operation/degree")
 
