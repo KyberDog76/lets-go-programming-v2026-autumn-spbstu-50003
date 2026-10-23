@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 func main() {
@@ -11,21 +12,28 @@ func main() {
 		degree      int
 		operation   string
 	)
+
 	if _, err := fmt.Scan(&departments); err != nil {
-		fmt.Println("Invalid input for departments")
+		fmt.Fprintln(os.Stderr, "Invalid input for departments")
+
 		return
 	}
+
 	for i := 0; i < departments; i++ {
 		if _, err := fmt.Scan(&staff); err != nil {
 			return
 		}
+
 		minTemp := 15
 		maxTemp := 30
+
 		for j := 0; j < staff; j++ {
 			if _, err := fmt.Scan(&operation, &degree); err != nil {
-				fmt.Println("Invalid input for operation/degree")
+				fmt.Fprintln(os.Stderr, "Invalid input for operation/degree")
+
 				return
 			}
+
 			if operation == ">=" {
 				if degree > minTemp {
 					minTemp = degree
@@ -35,6 +43,7 @@ func main() {
 					maxTemp = degree
 				}
 			}
+
 			if minTemp <= maxTemp {
 				fmt.Println(minTemp)
 			} else {
